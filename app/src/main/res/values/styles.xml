@@ -1,0 +1,64 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#424242</item>
+        <item name="colorPrimaryDark">#212121</item>
+        <item name="colorAccent">#90a4ae</item>
+    </style>
+
+    <!-- Style for a header textview -->
+    <style name="CustomText">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#4527A0</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="VerticalThemeLayout">
+        <item name="android:background">#E0E0E0</item>
+    </style>
+
+    <style name="HeaderTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:textColor">#616161</item>
+    </style>
+
+    <style name="QuestionTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:textColor">#424242</item>
+    </style>
+
+    <style name="RailsButton">
+        <item name="android:background">#8E24AA</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_width">68dp</item>
+        <item name="android:textColor">#f2f0f0</item>
+    </style>
+
+    <style name="RubyButton">
+        <item name="android:background">#00ACC1</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_width">68dp</item>
+        <item name="android:textColor">#f2f0f0</item>
+    </style>
+
+    <style name="Text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:inputType">textCapWords</item>
+    </style>
+
+    <style name="SubmitButton">
+        <item name="android:background">#434748</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_width">68dp</item>
+        <item name="android:textColor">#f2f0f0</item>
+    </style>
+</resources>

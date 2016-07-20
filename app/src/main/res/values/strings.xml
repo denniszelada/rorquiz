@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Ruby or Rails? Quiz</string>
+    <string name="header">Let\'s check wheter you remember where Ruby ends and Rails starts</string>
+    <string name="question_one">Question 1 .blank?</string>
+    <string name="question_two">Question 2 420.modulo(4)?</string>
+    <string name="question_three">Question 3 DateTime.current?</string>
+    <string name="question_four">Question 4 delegate</string>
+    <string name="ruby">Ruby</string>
+    <string name="rails">Rails</string>
+    <string name="name">Name</string>
+    <string name="submit">Submit</string>
+    <string name="clear">Clear</string>
+</resources>
