@@ -1,5 +1,6 @@
 package com.meimportatunegocio.railsquiz;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     int correct = 0;
@@ -35,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
     public void answersSubmit(View view){
         EditText nameField = (EditText) findViewById(R.id.name_field);
         String name = nameField.getText().toString();
+        EditText answerOne = (EditText) findViewById(R.id.answer_one);
+        String firstAnswer = answerOne.getText().toString();
 
         CheckBox rubyBox = (CheckBox) findViewById(R.id.ruby_checkbox);
         CheckBox railsBox = (CheckBox) findViewById(R.id.rails_checkbox);
@@ -52,17 +56,23 @@ public class MainActivity extends AppCompatActivity {
         RadioButton railsFour = (RadioButton) findViewById(R.id.railsFour);
         boolean rubyFourSelect = rubyFour.isChecked();
         boolean railsFourSelect = railsFour.isChecked();
-        String results = verifyResults(name, rubySelect, railsSelect, rubyTwoSelect, railsTwoSelect, rubyThreeSelect, railsThreeSelect, rubyFourSelect, railsFourSelect);
+        String results = verifyResults(name, firstAnswer, rubySelect, railsSelect, rubyTwoSelect, railsTwoSelect, rubyThreeSelect, railsThreeSelect, rubyFourSelect, railsFourSelect);
         displayMessage(results);
     }
 
-    private String verifyResults(String name, boolean rubySelect, boolean railsSelect, boolean rubyTwoSelect, boolean railsTwoSelect, boolean rubyThreeSelect, boolean railsThreeSelect, boolean rubyFourSelect, boolean railsFourSelect) {
-        if (rubySelect & railsSelect)   {
-            incorrect += 1;
+    private String verifyResults(String name, String firstAnswer, boolean rubySelect, boolean railsSelect, boolean rubyTwoSelect, boolean railsTwoSelect, boolean rubyThreeSelect, boolean railsThreeSelect, boolean rubyFourSelect, boolean railsFourSelect) {
+        String experience = "";
+        if (rubySelect & railsSelect) {
+            experience = "Ruby and Rails";
+        }  else if(rubySelect) {
+            experience = "ruby ";
         } else if (railsSelect) {
-            correct +=1;
-        } else if (rubySelect) {
-            incorrect +=1;
+            experience = "rails ";
+        }
+        if (firstAnswer == "Rails") {
+            correct += 1;
+        } else {
+            incorrect += 1;
         }
         if (rubyTwoSelect)  {
             correct += 1;
@@ -83,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
             correct += 1;
         }
         String results = "Hello " + name;
+        results += "\n You have experience with: " + experience;
         results += "\nYou got " + correct +  " answers correct";
         results += "\nYou got " + incorrect +  " answers incorrect";
         return results;
@@ -90,7 +101,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void displayMessage(String message) {
-        TextView orderSummaryTextView = (TextView) findViewById(R.id.summary_text_view);
-        orderSummaryTextView.setText(message);
+        Context context = getApplicationContext();
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, message, duration);
+        toast.show();
+        //TextView orderSummaryTextView = (TextView) findViewById(R.id.summary_text_view);
+        //orderSummaryTextView.setText(message);
     }
 }
