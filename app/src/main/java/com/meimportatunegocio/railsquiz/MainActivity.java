@@ -42,8 +42,12 @@ public class MainActivity extends AppCompatActivity {
 
         CheckBox rubyBox = (CheckBox) findViewById(R.id.ruby_checkbox);
         CheckBox railsBox = (CheckBox) findViewById(R.id.rails_checkbox);
+        CheckBox javaBox = (CheckBox) findViewById(R.id.java_checkbox);
+        CheckBox pythonBox = (CheckBox) findViewById(R.id.python_checkbox);
         boolean rubySelect = rubyBox.isChecked();
         boolean railsSelect = railsBox.isChecked();
+        boolean javaSelect = javaBox.isChecked();
+        boolean pythonSelect = pythonBox.isChecked();
         RadioButton rubyTwo = (RadioButton) findViewById(R.id.rubyTwo);
         RadioButton railsTwo = (RadioButton) findViewById(R.id.railsTwo);
         boolean rubyTwoSelect = rubyTwo.isChecked();
@@ -56,13 +60,12 @@ public class MainActivity extends AppCompatActivity {
         RadioButton railsFour = (RadioButton) findViewById(R.id.railsFour);
         boolean rubyFourSelect = rubyFour.isChecked();
         boolean railsFourSelect = railsFour.isChecked();
-        String results = verifyResults(name, firstAnswer, rubySelect, railsSelect, rubyTwoSelect, railsTwoSelect, rubyThreeSelect, railsThreeSelect, rubyFourSelect, railsFourSelect);
+        String results = verifyResults(name, firstAnswer, rubySelect, railsSelect, javaSelect, pythonSelect, rubyTwoSelect, railsTwoSelect, rubyThreeSelect, railsThreeSelect, rubyFourSelect, railsFourSelect);
         displayMessage(results);
     }
 
-    private String verifyResults(String name, String firstAnswer, boolean rubySelect, boolean railsSelect, boolean rubyTwoSelect, boolean railsTwoSelect, boolean rubyThreeSelect, boolean railsThreeSelect, boolean rubyFourSelect, boolean railsFourSelect) {
-        String experience = "";
-        if (rubySelect & railsSelect) {
+    private String verifyResults(String name, String firstAnswer, boolean rubySelect, boolean railsSelect, boolean javaSelect, boolean pythonSelect, boolean rubyTwoSelect, boolean railsTwoSelect, boolean rubyThreeSelect, boolean railsThreeSelect, boolean rubyFourSelect, boolean railsFourSelect) {
+        if (rubySelect & railsSelect & !javaSelect & !pythonSelect) {
             correct += 1;
         }  else  {
             incorrect += 1;
