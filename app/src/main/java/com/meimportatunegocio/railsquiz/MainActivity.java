@@ -63,13 +63,11 @@ public class MainActivity extends AppCompatActivity {
     private String verifyResults(String name, String firstAnswer, boolean rubySelect, boolean railsSelect, boolean rubyTwoSelect, boolean railsTwoSelect, boolean rubyThreeSelect, boolean railsThreeSelect, boolean rubyFourSelect, boolean railsFourSelect) {
         String experience = "";
         if (rubySelect & railsSelect) {
-            experience = "Ruby and Rails";
-        }  else if(rubySelect) {
-            experience = "ruby ";
-        } else if (railsSelect) {
-            experience = "rails ";
+            correct += 1;
+        }  else  {
+            incorrect += 1;
         }
-        if (firstAnswer == "Rails") {
+        if (firstAnswer.equalsIgnoreCase("Rails")) {
             correct += 1;
         } else {
             incorrect += 1;
@@ -93,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
             correct += 1;
         }
         String results = "Hello " + name;
-        results += "\n You have experience with: " + experience;
         results += "\nYou got " + correct +  " answers correct";
         results += "\nYou got " + incorrect +  " answers incorrect";
         return results;
@@ -106,7 +103,5 @@ public class MainActivity extends AppCompatActivity {
 
         Toast toast = Toast.makeText(context, message, duration);
         toast.show();
-        //TextView orderSummaryTextView = (TextView) findViewById(R.id.summary_text_view);
-        //orderSummaryTextView.setText(message);
     }
 }

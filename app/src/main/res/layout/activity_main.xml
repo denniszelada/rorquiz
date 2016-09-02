@@ -51,6 +51,29 @@
                 android:layout_height="wrap_content"
                 android:text="@string/rails" />
 
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="1dp" />
+
+            <CheckBox
+                android:id="@+id/java_checkbox"
+                style="@style/RubyButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/java" />
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="1dp" />
+
+            <CheckBox
+                android:id="@+id/python_checkbox"
+                style="@style/RailsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/python" />
+
+
 
         </LinearLayout>
 

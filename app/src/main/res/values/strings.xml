@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Ruby or Rails? Quiz</string>
     <string name="header">Let\'s check wheter you remember where Ruby ends and Rails starts</string>
-    <string name="experience">Do you have experience with</string>
+    <string name="experience">In which languages can you use puts?</string>
     <string name="question_one">Question 1 .blank?</string>
     <string name="question_two">Question 2 420.modulo(4)?</string>
     <string name="question_three">Question 3 DateTime.current?</string>
@@ -12,4 +12,6 @@
     <string name="submit">Submit</string>
     <string name="clear">Clear</string>
     <string name="ror">Ruby or Rails</string>
+    <string name="java">Java</string>
+    <string name="python">Python</string>
 </resources>
