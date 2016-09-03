@@ -96,6 +96,8 @@ public class MainActivity extends AppCompatActivity {
         String results = "Hello " + name;
         results += "\nYou got " + correct +  " answers correct";
         results += "\nYou got " + incorrect +  " answers incorrect";
+        correct = 0;
+        incorrect = 0;
         return results;
     }
 
