@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         }  else  {
             incorrect += 1;
         }
-        if (firstAnswer.equalsIgnoreCase("Rails")) {
+        if ("Rails".equalsIgnoreCase(firstAnswer)) {
             correct += 1;
         } else {
             incorrect += 1;
